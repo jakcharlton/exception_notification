@@ -43,12 +43,6 @@ class ExceptionNotifier
 
   private
 
-  def render_500(exception)
-    @error = exception
-    render template: 'errors/error_500', layout: 'layouts/application', status: 500 }
-  end
-
-
   def ignored_exception(ignore_array, exception)
     Array.wrap(ignore_array).map(&:to_s).include?(exception.class.name)
   end
