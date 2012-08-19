@@ -58,7 +58,7 @@ class ExceptionNotifier
 
   def render_500(exception)
     @error = exception
-    logger.info "System Error: Tried to access '#{request.fullpath}'.\n#{exception.class} error was raised for path .\n#{exception.message}"
+    Rails.logger.info "System Error: Tried to access '#{request.fullpath}'.\n#{exception.class} error was raised for path .\n#{exception.message}"
     respond_to do |format|
       format.html { render template: 'errors/error_500', layout: 'layouts/application', status: 500 }
       format.all { render nothing: true, status: 500}
