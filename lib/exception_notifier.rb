@@ -9,6 +9,7 @@ class ExceptionNotifier
       exceptions << 'ActiveRecord::RecordNotFound'
       exceptions << 'AbstractController::ActionNotFound'
       exceptions << 'ActionController::RoutingError'
+      exceptions << 'ActionController::UnknownController'
     end
   end
 
